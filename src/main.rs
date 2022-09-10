@@ -4,6 +4,8 @@ use std::{
     net::{TcpListener, TcpStream},
 };
 
+const PUBLIC_DIR: &str = "./public/";
+
 fn main() {
     // creating a TCP listener
     let listener = TcpListener::bind("127.0.0.1:8080").unwrap();
@@ -25,7 +27,7 @@ fn handle_connection(mut stream: TcpStream) {
         ("HTTP/1.1 404 NOT FOUND", "404.html")
     };
 
-    let contents = fs::read_to_string(filename).unwrap();
+    let contents = fs::read_to_string(PUBLIC_DIR.to_string() + filename).unwrap();
     let length = contents.len();
 
     let response =
