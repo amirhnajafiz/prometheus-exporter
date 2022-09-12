@@ -6,6 +6,8 @@ use std::{
     time::Duration,
 };
 
+
+include!("lib.rs");
 include!("server/server.rs");
 include!("http/handler/handler.rs");
 
