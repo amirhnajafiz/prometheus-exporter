@@ -108,27 +108,34 @@
 						Memory overcommitment is a situation when total resource allocation exceeds capacity. 
 						If you have a host with 8 GB of RAM and run five VMs configured to use 2 GB of RAM each, 
 						all VMs and the host machine can show low performance because the 
-						memory is overcommitted (if all VMs are using memory intensively). 
-						<br />
-						If some VMs are running, but they are lightly loaded, memory is primarily
-						used by the VMs that are heavily loaded because ESXi improves memory utilization. 
-						Memory overcommitment makes sense in test environments.
-						<br />
-						The first situation is that your Virtual Machine is simply caching processes on 
-						the memory and moving active threads to storage. 
-						This can be easily remedied by setting a fixed cache limit for your memory. 
-						<br />
-						The second way the memory can be causing bottlenecks is to be over-utilized and 
-						clogged by the multi-thread or extensive operations being carried out by your processors. 
-						Making the switch to storage should be discouraged, 
-						and you should allocate the required memory to your VM correctly.
+						memory is <span style="color: rgb(153, 51, 51);">overcommitted</span> (if all VMs are using memory intensively).
 						<br />
 						<br />
-						This ensures that 10% always remains free. 
-						A switch to storage will be signified by a jump in the processor usage stats. 
+						<ul>
+							<li class="x-p">
+								The first situation is that your Virtual Machine is simply caching processes on 
+								the memory and moving active threads to storage. 
+								This can be easily remedied by setting a <span style="color: rgb(25, 165, 25);">fixed cache limit</span> for your memory. 
+							</li>
+							<li class="x-p">
+								The second way the memory can be causing bottlenecks is to be over-utilized and 
+								clogged by the multi-thread or extensive operations being carried out by your processors. 
+								Making the switch to storage should be discouraged, and you should allocate the required memory to your VM correctly.
+							</li>
+						</ul>
+					</p>
+					<p class="x-p">
 						Monitoring the Committed Memory metrics using analytics and monitoring software 
 						is the better way to go instead of merely relying on the windows task manager.
 					</p>
+				</section>
+				<section>
+					<h3>
+						Memory Example
+					</h3>
+					<div style="text-align: center;">
+						<img style="background-color: #fff; padding: 10px;" width="600" src="assets/memory.png" />
+					</div>
 				</section>
 				<section>
 					<h2>
