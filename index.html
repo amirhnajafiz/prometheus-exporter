@@ -65,11 +65,15 @@
 				</section>
 				<section>
 					<h2>
-						Processors
+						Processors (CPU)
 					</h2>
 					<p class="x-p">
-						The processors handle the bulk of the VM activity 
-						and are critical factors determining the performance of the environment. 
+						Insufficient hardware resources are among the most popular reasons for slow VM performance. 
+						If you don’t provide enough CPU resources for a VM, software inside the 
+						VM might run slowly with lags. To fix this, set a VM to use more CPU cores or add more virtual 
+						processors. Also, consider upgrading the hardware of your host machine 
+						if you have an old processor with a low number of cores, cache, and low frequency.
+						<br />
 						There are a few specific cases that result in bottlenecks for your 
 						Virtual Machine and cause performance deficits. 
 					</p>
@@ -83,6 +87,7 @@
 							negatively impacting the VM processes. 
 						</li>
 					</ul>
+					<br />
 					<p class="x-p">
 						There are two ways to fix this issue. 
 						You can either increase the processing power or allocated processing cores for your VM, 
@@ -94,8 +99,14 @@
 						Memory
 					</h2>
 					<p class="x-p">
-						If you find your VM consuming too much memory, 
-						this can be caused by various reasons. 
+						Memory overcommitment is a situation when total resource allocation exceeds capacity. 
+						If you have a host with 8 GB of RAM and run five VMs configured to use 2 GB of RAM each, 
+						all VMs and the host machine can show low performance because the 
+						memory is overcommitted (if all VMs are using memory intensively). 
+						<br />
+						If some VMs are running, but they are lightly loaded, memory is primarily
+						used by the VMs that are heavily loaded because ESXi improves memory utilization. 
+						Memory overcommitment makes sense in test environments.
 						<br />
 						The first situation is that your Virtual Machine is simply caching processes on 
 						the memory and moving active threads to storage. 
@@ -139,8 +150,13 @@
 				</section>
 				<section>
 					<h2>
-
+						Conclution
 					</h2>
+					<p class="x-p">
+						You should have hardware that provides enough performance, 
+						avoid memory overcommitment, and configure software properly. 
+						Use VM performance monitoring to detect why VM performance is slow.
+					</p>
 				</section>
 				<section>
 					<h2>
