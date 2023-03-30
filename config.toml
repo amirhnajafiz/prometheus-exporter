@@ -1,8 +1,0 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'VM-Performance'
-enableGitInfo = true
-
-[params]
-
-[module]
