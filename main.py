@@ -1,1 +1,0 @@
-print("Prometheus Exporter)
