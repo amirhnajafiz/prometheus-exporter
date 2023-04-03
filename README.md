@@ -13,7 +13,25 @@ You might need to write your own exporter if:
 
 ## Example
 
+Let's create a simple http service by the following command:
 
+```shell
+cd app
+uvicorn main:app --reload
+```
+
+Now we have a http server that returns the following stats on ```localhost:8000/status```:
+
+```json
+{
+    "current_requests": 10,
+    "pending_requests": 2,
+    "total_uptime": 25.99274135,
+    "health": "healthy"
+}
+```
+
+Now run the exporter by ```python exporter.py``` and you can see the response on ```localhost:9877```.
 
 ### Response
 
