@@ -10,3 +10,13 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {"Version": fastapi.__version__}
+
+
+@app.get("/status")
+def status():
+    return {
+        "current_requests": "",
+        "pending_requests": "",
+        "total_uptime": "",
+        "health": "healthy"
+    }
