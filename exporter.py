@@ -34,7 +34,7 @@ class AppMetrics:
 
 def main():
     polling_interval_seconds = int(os.getenv("POLLING_INTERVAL_SECONDS", "5"))
-    app_port = int(os.getenv("APP_PORT", "80"))
+    app_port = int(os.getenv("APP_PORT", "8000"))
     exporter_port = int(os.getenv("EXPORTER_PORT", "9877"))
 
     app_metrics = AppMetrics(
