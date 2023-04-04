@@ -1,5 +1,9 @@
 # Prometheus Exporter
 
+![](https://img.shields.io/badge/type-exporter-red)
+![](https://img.shields.io/badge/language-python-blue)
+![](https://img.shields.io/badge/platform-prometheus-orange)
+
 Implementing a Prometheus exporter with Python. Prometheus follows an ```HTTP pull model```,
 It scrapes Prometheus ```metrics``` from endpoints routinely. Typically the abstraction layer between the application and Prometheus is an exporter,
 which takes application-formatted ```metrics``` and converts them to Prometheus ```metrics``` for consumption.
@@ -73,4 +77,5 @@ app_health{app_health="unhealthy"} 0.0
 
 ## Resources
 
-- [https://trstringer.com](https://trstringer.com/quick-and-easy-prometheus-exporter/)
+- [trstringer.com](https://trstringer.com/quick-and-easy-prometheus-exporter/)
+- [prometheus.io](https://prometheus.io/)
