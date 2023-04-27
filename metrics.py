@@ -9,9 +9,11 @@ class AppMetrics:
     AppMetrics is the metrics class in where
     we create our prometheus metrics to collect.
     """
-    def __init__(self, app_host="127.0.0.1", app_port=80, polling_interval_seconds=5):
+    def __init__(self, app_host="127.0.0.1", app_port=80, metrics_path="", secure=False, polling_interval_seconds=5):
+        self.app_protocol = "https" if secure else "http"
         self.app_host = app_host
         self.app_port = app_port
+        self.metrics_path = metrics_path
         self.polling_interval_seconds = polling_interval_seconds
 
         # metrics
@@ -29,7 +31,7 @@ class AppMetrics:
             time.sleep(self.polling_interval_seconds)
 
     def fetch(self):
-        resp = requests.get(url=f"http://{self.app_host}:{self.app_port}/status")
+        resp = requests.get(url=f"{self.app_protocol}://{self.app_host}:{self.app_port}/{self.metrics_path}")
         status_data = resp.json()
 
         # Update Prometheus metrics with application metrics
