@@ -13,7 +13,7 @@ def _main():
         app_host="localhost",
         app_port="8000",
         secure=False,
-        metrics_path="/status",
+        metrics_path="status",
         polling_interval_seconds=polling_interval_seconds
     )
 

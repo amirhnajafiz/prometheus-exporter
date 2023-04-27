@@ -23,6 +23,8 @@ class AppMetrics:
         """
         in run method, we pull the metrics in an interval time.
         """
+        print(f"exporting {self.app_url}")
+        
         while True:
             self.fetch()
             time.sleep(self.polling_interval_seconds)
