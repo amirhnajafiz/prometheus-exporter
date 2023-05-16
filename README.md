@@ -15,6 +15,10 @@ You might need to write your own exporter if:
 - You are using 3rd party software that does not have an existing exporter already
 - You want to generate Prometheus ```metrics``` from software that you have written
 
+## Schema
+
+![](diagram.svg)
+
 ## Example
 
 Let's create a simple http service by the following command:
