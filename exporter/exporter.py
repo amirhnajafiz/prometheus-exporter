@@ -8,12 +8,16 @@ from metrics import AppMetrics
 def _main():
     polling_interval_seconds = int(os.getenv("POLLING_INTERVAL_SECONDS", "5"))
     exporter_port = int(os.getenv("EXPORTER_PORT", "9877"))
+    
+    host = os.getenv("TARGET_HOST", "localhost")
+    port = int(os.getenv("TARGET_PORT", "8000"))
+    path = os.getenv("TARGET_METRICS", "status")
 
     app_metrics = AppMetrics(
-        app_host="localhost",
-        app_port="8000",
+        app_host=host,
+        app_port=port,
         secure=False,
-        metrics_path="status",
+        metrics_path=path,
         polling_interval_seconds=polling_interval_seconds
     )
 
