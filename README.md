@@ -85,6 +85,16 @@ app_health{app_health="healthy"} 1.0
 app_health{app_health="unhealthy"} 0.0
 ```
 
+### Docker
+
+Use the following command to execute the project in ```Docker```:
+
+```sh
+docker compose up -d
+```
+
+Now go to ```localhost:9090``` to get the app metrics.
+
 ## Resources
 
 - [trstringer.com](https://trstringer.com/quick-and-easy-prometheus-exporter/)
