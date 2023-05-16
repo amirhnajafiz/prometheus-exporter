@@ -1,0 +1,10 @@
+FROM python:3.10-alpine
+
+ENV POLLING_INTERVAL_SECONDS=5
+ENV EXPORTER_PORT=9877
+
+COPY *.py .
+
+EXPOSE $EXPORTER_PORT
+
+CMD python exporter.py
