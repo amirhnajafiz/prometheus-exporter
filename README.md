@@ -35,7 +35,7 @@ Now we have a http server that returns the following stats on ```localhost:8000/
 }
 ```
 
-Now run the exporter by ```python exporter.py``` and you can see the response on ```localhost:9877```.
+Now run the exporter by ```python exporter/exporter.py``` and you can see the response on ```localhost:9877```.
 
 ### Response
 
