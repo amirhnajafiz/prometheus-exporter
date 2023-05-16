@@ -37,6 +37,16 @@ Now we have a http server that returns the following stats on ```localhost:8000/
 
 Now run the exporter by ```python exporter/exporter.py``` and you can see the response on ```localhost:9877```.
 
+### ENV
+
+| Name        | Description | Default     |
+| ----------- | ----------- | :---------: |
+| ```POLLING_INTERVAL_SECONDS```      | Interval time of polling metrics in exporter | 5         |
+| ```EXPORTER_PORT```                 | HTTP port of exporter                        | 9877      |
+| ```TARGET_HOST```                   | Address of target                            | localhost |
+| ```TARGET_PORT```                   | HTTP port of target                          | 8000      |
+| ```TARGET_METRICS```                | Path of metrics                              | status    |
+
 ### Response
 
 Exporter provides the following output, which are prometheus ```metrics```.
